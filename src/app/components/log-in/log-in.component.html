@@ -1,0 +1,28 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title><h2>Welcome <span *ngIf="loggedIn">{{user.firstName}} {{user.lastName}}, </span> to Angular 8 Application</h2></mat-card-title>
+
+    </mat-card-header>
+
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Username">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password">
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+
+        <button type="button" class="btn-block" (click)="signInWithFB()" *ngIf="!loggedIn" mat-flat-button color="primary">Sign In With Facebook</button>
+        <button type="button" class="btn-block" (click)="signOut()" *ngIf="loggedIn" mat-flat-button color="primary">Sign Out From Facebook</button>
+
+    </form>
+  </mat-card>
+
+</div>
+
